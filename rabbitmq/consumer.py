@@ -24,7 +24,7 @@ def main():
             break
 
     # Cancel the consumer and return any pending messages
-    requeued_messages = channel.cancel()
+    requeued_messages = rabbit.cancel_channel(channel)
     print('Requeued %i messages' % requeued_messages)
 
     # Close the channel and the connection
