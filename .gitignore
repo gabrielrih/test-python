@@ -3,3 +3,7 @@ __pycache__
 
 # Databases
 *.db
+
+# Env variables
+.env
+.venv
