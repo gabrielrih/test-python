@@ -1,11 +1,16 @@
+from resources.device_type import DeviceType
+
+
 class Device:
     def __init__(self,
                  id: str,
                  name: str,
+                 type: DeviceType,
                  hardware_version: str,
                  software_version: str):
         self.id = id
         self.name = name
+        self.type = type
         self.hardware_version = hardware_version
         self.software_version = software_version
 
@@ -20,6 +25,12 @@ class Device:
 
     def set_name(self, name: str):
         self.name = name
+
+    def get_type(self) -> DeviceType:
+        return self.type
+
+    def set_type(self, type: DeviceType):
+        self.type = type
 
     def get_hardware_version(self) -> str:
         return self.hardware_version

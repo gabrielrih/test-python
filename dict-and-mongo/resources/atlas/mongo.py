@@ -15,6 +15,8 @@ class Mongo():
             raise exc
 
     def insert_a_document(self, database_name: str, collection_name: str, json: str):
+        if not self.client:
+            raise 'Exception: You must open a connection first!'
         try:
             database = self.client[database_name]
             collection = database[collection_name]

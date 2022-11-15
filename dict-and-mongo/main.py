@@ -1,14 +1,17 @@
 import uuid
 
 from resources.device import Device
+from resources.device_type import DeviceType
 from resources.atlas.mongo import Mongo
+from resources.util.generator import generate_unique_id
 
 DATABASE_NAME = 'testing'
 
 # Create a test device
 sensor_one = Device(
-    id = str(uuid.uuid4()),
+    id = generate_unique_id(),
     name='bathroom_light',
+    type=DeviceType.LIGTH.value,a
     hardware_version='0.0.1',
     software_version='1.0.0')
 
