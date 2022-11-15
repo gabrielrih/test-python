@@ -7,3 +7,7 @@ __pycache__
 # Env variables
 .env
 .venv
+
+# Testing and coverage
+htmlcov
+.coverage
