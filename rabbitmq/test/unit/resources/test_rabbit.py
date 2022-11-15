@@ -1,16 +1,17 @@
 import os
 import sys
 import unittest
-import pytest
+#import pytest
 
 from unittest import mock
+
 
 HERE = os.path.dirname(os.path.realpath(__file__))
 root_path = f'{HERE}/../../..'
 sys.path.insert(0, root_path)
 
-from resources.rabbit import Rabbit
 from test.unit import model
+from resources.rabbit import Rabbit
 
 class TestRabbit(unittest.TestCase):
     def setUp(self):
@@ -23,7 +24,7 @@ class TestRabbit(unittest.TestCase):
     def stopMock(self):
          self.get_environment_variable.stop()
 
-    @mock.patch('__open_connection')
+    @mock.patch('resources.rabbit.Rabbit.open_connection')
     def test_open_channel(self, mock_open_conn):
         # Given
         rabbit = Rabbit()

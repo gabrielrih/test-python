@@ -8,9 +8,9 @@ from resources.enum.exchange_type import ExchangeType
 class Rabbit():
     def __init__(self):
         rabbit_cfg = RabbitCfg()
-        self._connection = self.__open_connection(rabbit_cfg)
+        self._connection = self.open_connection(rabbit_cfg)
 
-    def __open_connection(self, rabbit_cfg):
+    def open_connection(self, rabbit_cfg):
         try:
             credentials = pika.PlainCredentials(rabbit_cfg.username, rabbit_cfg.password)
             parameters = pika.ConnectionParameters(host=rabbit_cfg.host, virtual_host=rabbit_cfg.virtual_host, credentials=credentials)
